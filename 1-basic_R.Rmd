@@ -1,0 +1,96 @@
+---
+title: "Basic R"
+author: "Tengku Hanis"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  html_document:
+    toc: true # table of content true
+    toc_float: true # float the toc
+    toc_depth: 3  # upto three depths of headings (specified by #, ## and ###)
+    # number_sections: true  ## if you want number sections at each table header
+    theme: united  # many options for theme, this one is my favorite.
+    highlight: tango  # specifies the syntax highlighting style
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data types in R
+
+There are 5 data types (that I know of):
+
+1) Character
+```{r character}
+name <- c("hanis", "hafizah")
+
+# How to check data types
+class(name)
+typeof(name)
+str(name)
+```
+2) Numeric
+```{r numeric}
+number <- c(1.2,3)
+
+class(number)
+```
+3) Integer
+```{r integer}
+int1 <- 1:3
+int2 <- 2L
+
+class(int1); class(int2)
+```
+4) Logical
+```{r logical}
+logi <- c(TRUE, F)
+
+class(logi)
+```
+5) Complex
+```{r complex}
+comp <- 1+4i
+
+class(comp)
+```
+
+# Data structure in R
+
+There are 5 data structures (that I know of):
+
+1) Atomic vector
+- Basic data structure in R
+```{r vector}
+vc <- 1:10
+vc
+
+dim(vc)
+```
+2) Matrix
+```{r matrix}
+mt <- matrix(1:10, nrow = 5, ncol = 2)
+mt
+
+class(mt)
+dim(mt)
+```
+3) Data frame
+```{r data frame}
+class(iris) # existing data frame in R
+str(iris)
+```
+4) List
+```{r list}
+ls <- list(data1 = iris, 
+           date2 = mtcars)
+
+class(ls)
+str(ls)
+```
+5) Others such as factor
+- Not sure, I have never use this so far
+
+References:  
+
+1) https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/index.html
