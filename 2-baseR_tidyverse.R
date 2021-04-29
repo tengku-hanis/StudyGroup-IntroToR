@@ -91,3 +91,15 @@ iris %>%
   top_n(5)
 
 ####-------- tidy/long and wide format
+?fish_encounters
+fish_encounters
+
+# Long --> wide
+fish_wide <- fish_encounters %>%
+  pivot_wider(names_from = station, values_from = seen)
+fish_wide
+
+# Wide --> tidy/long
+fish_tidy <- fish_wide %>% 
+  pivot_longer(cols = 2:12, names_to = "monitor_station", values_to = "pass_through")
+fish_tidy

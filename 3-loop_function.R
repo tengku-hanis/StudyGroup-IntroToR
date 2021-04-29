@@ -47,3 +47,10 @@ proc.time() - ptm #-- stop the clock
 sapply(xlist, mean)
 
 ##-------------- Make function
+# Function to multiply numeric predictor in iris with 10
+multiply10 <- function(var){
+  var*10
+}
+
+lapply(iris[,1:4], multiply10)
+
