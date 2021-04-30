@@ -104,3 +104,4 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
   ease_aes('linear')
 
 
+### add something to try to reset
