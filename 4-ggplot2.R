@@ -102,3 +102,6 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
   labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
   transition_time(year) +
   ease_aes('linear')
+
+
+### add something to reset
