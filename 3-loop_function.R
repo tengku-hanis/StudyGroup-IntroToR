@@ -4,20 +4,20 @@
 ## Date: 29-04-2021
 ## ===========================================================================
 
-##-------------- Loops
-# For loops
+# Loops ----
+## For loops
 for (i in 1:5) {
   print(i)
 }
 
-# While loops
+## While loops
 i <- 0
 while (i <= 4) {
   i <- i + 1
   print(i)
 }
 
-##-------------- More practical application 
+## More practical application ----
 set.seed(2021)
 xlist <- list(col1 = rnorm(10000000), 
               col2 = rnorm(10000000),
@@ -25,7 +25,7 @@ xlist <- list(col1 = rnorm(10000000),
               col4 = rnorm(1000000))
 str(xlist)
 
-# Loop
+### Loop
 ptm <- proc.time() #-- start the clock
 
 mean_loop <- vector("list", 0) # place holder for a value
@@ -36,7 +36,7 @@ mean_loop
 
 proc.time() - ptm #-- stop the clock (time in seconds)
 
-# Apply family
+### Apply family
 ptm <- proc.time() #-- start the clock
 
 mean_apply <- lapply(xlist, mean)
@@ -46,8 +46,8 @@ proc.time() - ptm #-- stop the clock
 
 sapply(xlist, mean)
 
-##-------------- Make function
-# Function to multiply numeric predictor in iris with 10
+# Make function ----
+## Function to multiply numeric predictor in iris with 10
 multiply10 <- function(var){
   var*10
 }
