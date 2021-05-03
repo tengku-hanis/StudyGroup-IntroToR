@@ -7,7 +7,7 @@
 # Package
 library(tidyverse)
 
-# ggplot2 ----
+# ggplot2 -----------------------------------------------------------------
 ## scatter plot
 ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point() +
@@ -25,7 +25,7 @@ ggplot(data = iris, aes(x = Sepal.Length, fill = Species)) +
   geom_density(alpha = 0.6) +
   theme_bw()
 
-# ggstatsplot ---- 
+# ggstatplot --------------------------------------------------------------
 ## (https://github.com/IndrajeetPatil/ggstatsplot)
 library(ggstatsplot)
 ggbetweenstats(data = iris %>% 
@@ -35,7 +35,7 @@ ggbetweenstats(data = iris %>%
                outlier.tagging = TRUE,
                outlier.label = id)
 
-# ggpubr ----
+# ggpubr ------------------------------------------------------------------
 ## (https://rpkgs.datanovia.com/ggpubr/)
 library(ggpubr)
 library(mlbench) # pima dataset
@@ -62,7 +62,7 @@ pima_box +
   stat_compare_means(comparisons = list(c("neg", "pos")),
                      method = "wilcox.test") # equivalent to mann-whitney  
                 
-# plotly ----
+# plotly ------------------------------------------------------------------
 ## (https://plotly.com/ggplot2/)
 library(plotly)
 
@@ -79,7 +79,7 @@ p1 <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)
 
 ggplotly(p1)
 
-# gganimate ---- 
+# gganimate ---------------------------------------------------------------
 # (https://gganimate.com/)
 library(gganimate)
 
