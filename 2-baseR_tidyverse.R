@@ -68,7 +68,7 @@ iris$SL_minus10 <- iris$Sepal.Length - 10
 iris %>% 
   mutate(SL_minus10 = Sepal.Length - 10)
 
-## 4- Arange ----
+## 4- Arrange ----
 head(iris[order(-iris$Sepal.Width),])
 
 iris %>% 
