@@ -39,11 +39,15 @@ ggbetweenstats(data = iris %>%
                  mutate(id = paste0(sample(letters, 150, replace = TRUE), 1:150)), #id for outliers
                x = Species,
                y = Sepal.Width,
-               #results.subtitle = F,
-               #pairwise.comparisons = F,
-               #outlier.label.args = list(size = 4),
+               results.subtitle = FALSE,
+               pairwise.comparisons = FALSE,
+               #bf.message = FALSE,
+               #ggsignif.args = list(textsize = 3.5, tip_length = 0.01),
+               #p.adjust.method = "bonferroni",
+               outlier.label.args = list(size = 4),
                outlier.tagging = TRUE,
-               outlier.label = id)
+               outlier.label = id,
+               outlier.color = "red")
 
 ## Scatter plot + histogram
 ggscatterstats(data = PimaIndiansDiabetes2,
