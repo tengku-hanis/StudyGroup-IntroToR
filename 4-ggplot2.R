@@ -36,7 +36,7 @@ ggcorrmat(mtcars)
 
 ## Violin plot + boxplot
 ggbetweenstats(data = iris %>% 
-                 mutate(id = paste0(sample(letters, 150, replace = T), 1:150)), # id for outliers
+                 mutate(id = paste0(sample(letters, 150, replace = TRUE), 1:150)), #id for outliers
                x = Species,
                y = Sepal.Width,
                #results.subtitle = F,
@@ -49,6 +49,20 @@ ggbetweenstats(data = iris %>%
 ggscatterstats(data = PimaIndiansDiabetes2,
                x = triceps,
                y = mass)
+
+## Histogram with a normal distribution curve
+gghistostats(data = PimaIndiansDiabetes2,
+             x = age,
+             results.subtitle = FALSE,
+             normal.curve = TRUE,
+             normal.curve.args = list(color = "red", size = 1))
+
+grouped_gghistostats(data = PimaIndiansDiabetes2,
+             x = age,
+             grouping.var = diabetes,
+             results.subtitle = FALSE,
+             normal.curve = TRUE,
+             normal.curve.args = list(color = "red", size = 1))
 
 # ggpubr ------------------------------------------------------------------
 ## (https://rpkgs.datanovia.com/ggpubr/)
