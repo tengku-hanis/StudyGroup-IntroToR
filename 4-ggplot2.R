@@ -4,8 +4,10 @@
 ## Date: 29-04-2021
 ## ===========================================================================
 
-# Package
+# Packages and data
 library(tidyverse)
+library(mlbench) # pima dataset
+data("PimaIndiansDiabetes2")
 
 # ggplot2 -----------------------------------------------------------------
 ## scatter plot
@@ -28,18 +30,26 @@ ggplot(data = iris, aes(x = Sepal.Length, fill = Species)) +
 # ggstatplot --------------------------------------------------------------
 ## (https://github.com/IndrajeetPatil/ggstatsplot)
 library(ggstatsplot)
+
+## Correlogram
+ggcorrmat(mtcars)
+
+## Violin plot + boxplot
 ggbetweenstats(data = iris %>% 
-                 mutate(id = paste0(sample(letters, 150, replace = T), 1:150)),
+                 mutate(id = paste0(sample(letters, 150, replace = T), 1:150)), # id for outliers
                x = Species,
                y = Sepal.Width,
                outlier.tagging = TRUE,
                outlier.label = id)
 
+## Scatter plot + histogram
+ggscatterstats(data = PimaIndiansDiabetes2,
+               x = triceps,
+               y = mass)
+
 # ggpubr ------------------------------------------------------------------
 ## (https://rpkgs.datanovia.com/ggpubr/)
 library(ggpubr)
-library(mlbench) # pima dataset
-data("PimaIndiansDiabetes2")
 
 ## density plot
 ggdensity(PimaIndiansDiabetes2, 
