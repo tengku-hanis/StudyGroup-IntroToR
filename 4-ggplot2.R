@@ -39,6 +39,9 @@ ggbetweenstats(data = iris %>%
                  mutate(id = paste0(sample(letters, 150, replace = T), 1:150)), # id for outliers
                x = Species,
                y = Sepal.Width,
+               #results.subtitle = F,
+               #pairwise.comparisons = F,
+               #outlier.label.args = list(size = 4),
                outlier.tagging = TRUE,
                outlier.label = id)
 
